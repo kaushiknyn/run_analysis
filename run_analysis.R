@@ -62,8 +62,10 @@ combined_data_aggregate <- reshape2::melt(data = combined_data, id = c("SubjectN
 combined_data_aggregate <- reshape2::dcast(data = combined_data_aggregate,
                                            SubjectNum + Activity ~ variable,fun.aggregate = mean)
 
-#Export aggregated data to csv
+#Export aggregated data to csv and txt
 
 write.csv(x = combined_data_aggregate,file = "./tidyData.csv",quote = FALSE)
 write.table(combined_data_aggregate,file = "./tidyData.txt",quote = FALSE,row.names = FALSE)
+
+#Write code book
 
